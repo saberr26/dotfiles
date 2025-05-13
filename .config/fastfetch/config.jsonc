@@ -1,0 +1,146 @@
+// Modified from: 24.jsonc
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo":{
+        //"source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | shuf -n 1)",
+        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/logo/\" -name \"*.png\" | shuf -n 1)",
+        //"source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/images/\" -name \"*.icon\" | shuf -n 1)",
+		"height": 20,
+		"padding": {
+		"right": 5,
+		   "top":1
+		   }
+        },
+    "display": {
+      "separator": "",
+      "constants": [
+        // CONSTANT {#92}{$1} - VERTICAL BARS AT START AND 75th CHARACTERS FORWARD AND BACKWARD
+        "│                                                            │\u001b[60D\u001b[39m",
+                  "──────────────────────────────"
+		],
+    },
+    "modules": [
+      // CUSTOM - Top UI bar
+      {
+        "type": "custom",
+        "key": "{#92}╭─────────────╮",
+        "format": "{#92}╭{$2}{$2}╮",
+      },
+      {
+        "type": "title",
+        "key": "{#92}│ {#92}╭─ User    {#92}│",
+        "format": "{#92}{$1}{#92}{user-name}  "
+      },
+      {
+        "type": "locale",
+        "key": "{#92}│ {#92}├─ locale  {#92}│",
+        "format": "{#92}{$1}{#92}{result}"
+      },
+      {
+        "type": "wifi",
+        "key": "{#92}│ {#92}├─ wifi    {#92}│",
+        "format": "{#92}{$1}{#92}{ssid}"
+    },
+      {
+        "type": "datetime",
+        "key": "{#92}│ {#92}╰─󰅐 Date    {#92}│",
+        "format": "{#92}{$1}{#92}{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty}  {#2}[{weekday}] [W{week}] [UTC{offset-from-utc}]"
+      },
+      {
+        "type": "memory",
+        "key": "{#92}│ {#93}╭─ RAM     {#92}│",
+        "format": "{#92}{$1}{#91}{used} / {total} ({percentage}{#91})"
+      },
+      {
+        "type": "wm",
+        "key": "{#92}│ {#93}├─ WM      {#92}│",
+        "format":"{#92}{$1}{#91}{1} {#93}({3})"
+      },
+      {
+        "type": "display",
+        "key": "{#92}│ {#93}├─󰍹 DISPLAY {#92}│",
+        "format": "{#92}{$1}{#91}{scaled-width}x{scaled-height} {refresh-rate}Hz {#93}[{type}]"
+    },
+      {
+        "type": "os",
+        "key": "{#92}│ {#93}├─ OS      {#92}│",
+        "format": "{#92}{$1}{#91} {?pretty-name}{pretty-name}{/pretty-name}{name}{/}{codename}{#93}{version} {arch}"
+      },
+      {
+        "type": "kernel",
+        "key": "{#92}│ {#93}├─󰚄 Kernel  {#92}│",
+        "format": "{#92}{$1}{#91}{sysname} {#91}v{release}"
+      },
+      {
+        "type": "uptime",
+        "key": "{#92}│ {#93}├─󱑒 Uptime  {#92}│",
+        "format": "{#92}{$1}{#91}{?days}{days} Days + {?}{hours} hours ,{minutes} mins"
+      },
+      {
+        "type": "gpu",
+        "key": "{#92}│ {#93}├─󰢮 GPU     {#92}│",
+        "detectionMethod": "auto",
+        "driverSpecific": true,
+        "format": "{#92}{$1}{#91}{name}  {#93}[C:{core-count}]{?frequency} [{frequency}]{?} {#2}[{type}]"
+      },
+      {
+        "type": "cpu",
+        "key": "{#92}│ {#93}├─ CPU     {#92}│",
+        "showPeCoreCount": true,
+        "temp": true,
+        "format": "{#92}{$1}{#91}{name}  {#93}[C:{core-types}] [{freq-max}]"
+      },
+      {
+        "type": "disk",
+        "key": "{#92}│ {#93}╰─ Disk    {#92}│",
+        "format": "{#92}{$1}{#91}{size-used} / {size-total} ({size-percentage}{#91})"
+      },
+      {
+        "type": "terminal",
+        "key": "{#92}│ {#95}╭─ Terminal{#92}│",
+        "format": "{#92}{$1}{#92}{pretty-name} {#95}v{version}"
+      },
+      {
+        "type": "terminalfont",
+        "key": "{#92}│ {#95}├─ Font    {#92}│",
+        "format": "{#92}{$1}{#92}{name}  {#95}[{size}]"
+      },
+      {
+        "type": "shell",
+        "key": "{#92}│ {#95}├─ Shell   {#92}│",
+        "format": "{#92}{$1}{#92}{pretty-name}{#95} v{version}"
+      },
+      {
+        "type": "battery",
+        "key": "{#92}│ {#95}╰─ battery {#92}│",
+        "format": "{#92}{$1}{#95}|{capacity}{#95}| {#95}{time-hours} hours,{time-minutes} mins "
+      },
+      // CUSTOM - Button UI bar
+      {
+        "type": "custom",
+        "key": "{#92}╰─────────────╯",
+        "format": "{#92}╰{$2}{$2}╯",
+      },
+      {
+        "type": "custom",
+        "key": " ",
+        "format": "{#92}╭───────{$2}{$2}────────╮",
+      },
+      {
+        "type": "custom",
+        "format": "{#92}┃{#90}████{#31}████{#32}████{#33}████{#34}████{#35}████{#36}████{#37}████{#38}████{#39}█████{#38}████{#37}████{#36}████{#35}████{#34}████{#33}████{#32}████{#31}████{#90}██{#92}│"      
+      },
+      {
+        "type": "custom",
+        "format": "{#92}┃{#90}████{#31}████{#32}████{#33}████{#34}████{#35}████{#36}████{#37}████{#38}████{#39}█████{#38}████{#37}████{#36}████{#35}████{#34}████{#33}████{#32}████{#31}████{#90}██{#92}│"      
+      },
+      {
+        "type": "custom",
+        "format": "{#92}┃{#90}████{#31}████{#32}████{#33}████{#34}████{#35}████{#36}████{#37}████{#38}████{#39}█████{#38}████{#37}████{#36}████{#35}████{#34}████{#33}████{#32}████{#31}████{#90}██{#92}│"      
+      },
+      {
+        "type": "custom",
+        "format": "{#92}╰───────{$2}{$2}────────╯",
+      },
+    ]
+  }
