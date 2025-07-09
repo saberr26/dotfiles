@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/vanilla/.local/bin/wallock-watch
+Icon=application-x-shellscript
+Name=wallock-watch
+Type=Application
+X-KDE-AutostartScript=true

@@ -1,0 +1,10 @@
+
+(process:91519): Gtk-WARNING **: 04:05:38.464: Theme parser error: gtk.css:58:1-26: Failed to import: Error opening file /home/vanilla/.config/gtk-4.0/libadwaita.css: No such file or directory
+
+(process:91519): Gtk-WARNING **: 04:05:38.465: Theme parser error: gtk.css:59:1-33: Failed to import: Error opening file /home/vanilla/.config/gtk-4.0/libadwaita-tweaks.css: No such file or directory
+
+(process:91519): Gtk-WARNING **: 04:05:38.465: Theme parser warning: gtk.css:60:1-61:1: Unterminated block at end of document
+
+(shader-switch.py:91519): Adwaita-WARNING **: 04:05:38.740: Using GtkSettings:gtk-application-prefer-dark-theme with libadwaita is unsupported. Please use AdwStyleManager:color-scheme instead.
+MESA-INTEL: warning: ../mesa-25.1.4/src/intel/vulkan/anv_formats.c:940: FINISHME: support YUV colorspace with DRM format modifiers
+MESA-INTEL: warning: ../mesa-25.1.4/src/intel/vulkan/anv_formats.c:972: FINISHME: support more multi-planar formats with DRM modifiers

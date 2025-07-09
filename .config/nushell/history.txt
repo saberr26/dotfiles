@@ -1,0 +1,107 @@
+sudo 
+exit
+fisj
+exit
+tar -I 'zstd --ultra -22 -TO' -cf /wallpapers.tar.zst .
+ls
+exit
+sudo pacman -Ss gImageReader
+sudo pacman -S imagereader-qt gimagereader-gtk gimagereader-common
+sudo pacman -S gimagereader-qt gimagereader-gtk gimagereader-common
+sudo pacman -Ss ocr
+sudo pacman -Ss ocr plasma
+sudo pacman -Ss ocr kde
+micro .local/bin/ocr
+ocr
+chmod +x .local/bin/ocr
+ocr
+exit
+GTK_DEBUG=interactive gimp
+exit
+GTK_DEBUG=interactive gimp
+curl -s https://wallhaven.cc/w/7jgyre | grep -o 'src="[^"]*\.js[^"]*"' | head -10
+curl "https://wallhaven.cc/assets/wh-core-add14a5e89d18eabfdff.min.js" -o wallhaven-core.min.js
+sudo pacman -S js-beautify
+sudo pacman -Ss js-beautify
+paru -Ss js-beautify
+paru -S js-beautify
+js-beautify wallhaven-core.min.js > wallhaven-core.js
+js-beautify wallhaven-core.min.js >wallhaven-core.js
+js-beautify wallhaven-core.min.js>wallhaven-core.js
+js-beautify wallhaven-core.min.js wallhaven-core.js
+js-beautify wallhaven-core.js wallhaven-core.min.js
+micro wallhaven-core.js
+wallhaven-core.min.js<\n>
+ls wallhaven-core.min.js<\n>
+micro wallhaven-core.min.js<\n>
+grep -i "crop\|resize\|canvas\|image\|scale" wallhaven-core.min.js
+grep -i "crop\|resize" wallhaven-core.min.js
+grep -i "crop" wallhaven-core.min.js
+grep -i "resize" wallhaven-core.min.js
+grep -i "canvas" wallhaven-core.min.js
+grep -i "scale" wallhaven-core.min.js
+grep -i "/wallpaper/crop" wallhaven-core.min.js
+grep -i "/wallpaper" wallhaven-core.min.js
+grep -i "wallpaper" wallhaven-core.min.js
+grep -i "drawImage\|getImageData\|createCanvas" wallhaven-core.min.js
+grep -i "drawImage" wallhaven-core.min.js
+grep -i "getImageData" wallhaven-core.min.js
+grep -i "createCanvas" wallhaven-core.min.js
+micro crop.py
+python crop.py
+sudo pacman -S gparted
+sudo pacman -Ss gemini
+paru -Ss gemini-cli
+sudo pacman -Si google-gemini-cli
+paru -Si google-gemini-cli
+paru -S google-gemini-cli
+clear
+mciro /etc/default/grub
+micro /etc/default/grub
+sudo pacman -Syu
+sudo pacman -Rns linux linux-headers
+sudo pacman -Rns kotlin
+sudo pacman -Syu
+sudo pacman -S linux-zen linux-zen-headers
+reboot
+sudo pacman -S linux-zen linux-zen-headers
+clear
+sudo pacman -S linux-zen linux-zen-headers
+sudo pacman -S power-profiles-daemon
+sudo systemctl enable power-profiles-daemon
+sudo systemctl start power-profiles-daemon
+sudo systemctl enable tlp
+sudo systemctl start tlp
+sudo systemctl enable power-profiles-daemon
+sudo systemctl start power-profiles-daemon
+sudo pacman -S linux-zen linux-zen-headers
+micro /etc/default/grub
+paru -S google-gemini-cli
+cat ~/fish_history_export.txt >> (echo $nu.history-path)
+ls
+./btrfs-manager
+make
+./btrfs-manager
+ls icons
+clock-rs
+./btrfs-manager
+lt
+ls -tree
+tree
+./btrfs-manager
+> $nu.history-path
+$nu.history-path
+micro /tmp/fish_to_nu.py
+python /tmp/fish_to_nu.py
+$nu.config-path
+micro $nu.config-path
+source nu
+./btrfs-manager
+micro /tmp/fish_to_nu.py
+micro /home/vanilla/.config/nushell/completions.nu
+make
+./btrfs-manager
+micro /home/vanilla/.config/nushell/completions.nu
+make
+./btrfs-manager
+micro /home/vanilla/.config/nushell/completions.nu

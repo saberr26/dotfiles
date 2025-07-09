@@ -1,0 +1,23 @@
+cursor-color = dee4e4
+selection-foreground = 1c3438
+selection-background = b1cbcf
+
+foreground = dee4e4
+background = 0e1415
+
+palette = 0=#0e1415
+palette = 1=#ff8678
+palette = 2=#92a6de
+palette = 3=#6ce8fa
+palette = 4=#ff8678
+palette = 5=#92a6de
+palette = 6=#6ce8fa
+palette = 7=#bec8ca
+palette = 8=#bec8ca
+palette = 9=#ffb4ab
+palette = 10=#b9c6ea
+palette = 11=#9df0fc
+palette = 12=#ffb4ab
+palette = 13=#b9c6ea
+palette = 14=#9df0fc
+palette = 15=#dee4e4

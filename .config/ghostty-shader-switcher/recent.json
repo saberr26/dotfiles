@@ -1,0 +1,17 @@
+[
+    "bettercrt.glsl",
+    "bloom.glsl",
+    "cursor_blaze.glsl",
+    "cursor_inverse_joined_corners.glsl",
+    "ghostty_wrapper.glsl",
+    "WIP.glsl",
+    "cursor_smear_fade.glsl",
+    "debug_cursor_animated.glsl",
+    "water.glsl",
+    "glitchy.glsl",
+    "in-game-crt.glsl",
+    "galaxy.glsl",
+    "bright-future.frag",
+    "animated-gradient-shader.glsl",
+    "cineShader-Lava.glsl"
+]

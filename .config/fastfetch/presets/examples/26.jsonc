@@ -1,0 +1,128 @@
+// Modified from: 24.jsonc
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    //"source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | shuf -n 1)",
+    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/logo/\" -name \"pngwing.com.png\" | shuf -n 1)",
+    //"source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/images/\" -name \"*.icon\" | shuf -n 1)",
+    "height": 15,
+    "padding": {
+      "top": 2,
+    },
+  },
+  "display": {
+    "separator": "",
+    "constants": [
+      // CONSTANT {$1} - VERTICAL BARS AT START AND 75th CHARACTERS FORWARD AND BACKWARD
+      "│                                                            │\u001b[60D\u001b[39m",
+    ],
+  },
+  "modules": [
+    // CUSTOM - Top UI bar
+    {
+      "type": "title",
+      "key": "{#97}│ {#92}╭─ User    {#97}│",
+      "format": "{$1}{#92}{user-name}  ",
+    },
+    {
+      "type": "wifi",
+      "key": "{#97}│ {#92}├─ wifi    {#97}│",
+      "format": "{$1}{#92}{ssid}",
+    },
+    {
+      "type": "datetime",
+      "key": "{#97}│ {#92}╰─󰅐 Date    {#97}│",
+      "format": "{$1}{#92}{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty}  {#2}[{weekday}] [W{week}] [UTC{offset-from-utc}]",
+    },
+    {
+      "type": "custom",
+      "key": "{#97}╭─────────────╮",
+      "format": "{#97}╭────────────────────────────────────────────────────────────╮",
+    },
+    {
+      "type": "memory",
+      "key": "{#97}│ {#93}╭─ RAM     {#97}│",
+      "format": "{$1}{#91}{used} / {total} ({percentage}{#91})",
+    },
+    {
+      "type": "wm",
+      "key": "{#97}│ {#93}├─ WM      {#97}│",
+      "format": "{$1}{#91}{1} {#93}({3})",
+    },
+    {
+      "type": "display",
+      "key": "{#97}│ {#93}├─󰍹 DISPLAY {#97}│",
+      "format": "{$1}{#91}{scaled-width}x{scaled-height} {refresh-rate}Hz {#93}[{type}]",
+    },
+    {
+      "type": "os",
+      "key": "{#97}│ {#93}├─ OS      {#97}│",
+      "format": "{$1}{#91} {?pretty-name}{pretty-name}{/pretty-name}{name}{/}{codename}{#93}{version} {arch}",
+    },
+    {
+      "type": "kernel",
+      "key": "{#97}│ {#93}├─󰚄 Kernel  {#97}│",
+      "format": "{$1}{#91}{sysname} {#91}v{release}",
+    },
+    {
+      "type": "uptime",
+      "key": "{#97}│ {#93}├─󱑒 Uptime  {#97}│",
+      "format": "{$1}{#91}{?days}{days} Days + {?}{hours} hours ,{minutes} mins",
+    },
+    {
+      "type": "gpu",
+      "key": "{#97}│ {#93}├─󰢮 GPU     {#97}│",
+      "detectionMethod": "auto",
+      "driverSpecific": true,
+      "format": "{$1}{#91}{name}  {#93}[C:{core-count}]{?frequency} [{frequency}]{?} {#2}[{type}]",
+    },
+    {
+      "type": "cpu",
+      "key": "{#97}│ {#93}├─ CPU     {#97}│",
+      "showPeCoreCount": true,
+      "temp": true,
+      "format": "{$1}{#91}{name}  {#93}[C:{core-types}] [{freq-max}]",
+    },
+    {
+      "type": "disk",
+      "key": "{#97}│ {#93}╰─ Disk    {#97}│",
+      "format": "{#97}{$1}{#91}{size-used} / {size-total} ({size-percentage}{#91})",
+    },
+    {
+      "type": "custom",
+      "key": "{#97}╰─────────────╯",
+      "format": "{#97}╰────────────────────────────────────────────────────────────╯",
+    },
+    {
+      "type": "custom",
+      "key": "{#97}╭─────────────╮",
+      "format": "{#97}╭────────────────────────────────────────────────────────────╮",
+    },
+    {
+      "type": "terminal",
+      "key": "{#97}│ {#95}╭─ Terminal{#97}│",
+      "format": "{$1}{#92}{pretty-name} {#95}v{version}",
+    },
+    {
+      "type": "terminalfont",
+      "key": "{#97}│ {#95}├─ Font    {#97}│",
+      "format": "{$1}{#92}{name}  {#95}[{size}]",
+    },
+    {
+      "type": "shell",
+      "key": "{#97}│ {#95}├─ Shell   {#97}│",
+      "format": "{$1}{#92}{pretty-name}{#95} v{version}",
+    },
+    {
+      "type": "battery",
+      "key": "{#97}│ {#95}╰─ battery {#97}│",
+      "format": "{$1}{#95}|{capacity}{#95}| {#95}{time-hours} hours,{time-minutes} mins ",
+    },
+    // CUSTOM - Button UI bar
+    {
+      "type": "custom",
+      "key": "{#97}╰─────────────╯",
+      "format": "{#97}╰────────────────────────────────────────────────────────────╯",
+    },
+  ],
+}

@@ -1,0 +1,471 @@
+/* Enhanced Terminal Theme for Ghostty - Matrix Green Style */
+/* ================================================= */
+
+/* ROOT VARIABLES - Easy customization */
+:root {
+  --terminal-bg: rgba(0, 0, 0, 0.85);
+  --terminal-bg-light: rgba(0, 0, 0, 0.6);
+  --terminal-bg-subtle: rgba(0, 0, 0, 0.3);
+  
+  --terminal-green: #00ff41;
+  --terminal-green-dim: rgba(0, 255, 65, 0.8);
+  --terminal-green-subtle: rgba(0, 255, 65, 0.4);
+  --terminal-green-faint: rgba(0, 255, 65, 0.15);
+  --terminal-green-ultra: rgba(0, 255, 65, 0.05);
+  
+  --terminal-white: rgba(255, 255, 255, 0.95);
+  --terminal-white-dim: rgba(255, 255, 255, 0.7);
+  --terminal-white-subtle: rgba(255, 255, 255, 0.4);
+  --terminal-white-faint: rgba(255, 255, 255, 0.1);
+  
+  --terminal-accent: rgba(0, 255, 150, 0.6);
+  --terminal-danger: rgba(255, 85, 85, 0.8);
+  
+  --terminal-radius: 8px;
+  --terminal-radius-small: 4px;
+  --terminal-transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --terminal-transition-fast: all 150ms ease-out;
+  
+  --terminal-font: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+  --terminal-glow: 0 0 12px var(--terminal-green-subtle), 0 0 24px var(--terminal-green-faint);
+}
+
+/* ================================================= */
+/* MAIN TABBAR CONTAINER */
+/* ================================================= */
+
+tabbar .box {
+  background: linear-gradient(180deg, 
+    var(--terminal-bg) 0%, 
+    var(--terminal-bg-light) 100%);
+  border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
+  box-shadow: 
+    inset 0 1px 0 var(--terminal-green-faint),
+    0 1px 0 var(--terminal-green-subtle),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+  padding: 2px;
+  padding-bottom: 0;
+  border-bottom: 2px solid var(--terminal-green-subtle);
+  position: relative;
+}
+
+tabbar .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--terminal-green) 50%, 
+    transparent 100%);
+  opacity: 0.6;
+}
+
+tabbar .box:backdrop {
+  background: linear-gradient(180deg, 
+    var(--terminal-bg-subtle) 0%, 
+    var(--terminal-bg-light) 100%);
+  border-bottom-color: var(--terminal-green-faint);
+  transition: var(--terminal-transition);
+}
+
+tabbar .box:backdrop > scrolledwindow,
+tabbar .box:backdrop > .start-action,
+tabbar .box:backdrop > .end-action {
+  filter: opacity(0.5) saturate(0.7);
+  transition: var(--terminal-transition);
+}
+
+/* ================================================= */
+/* TABBOX CONTAINER */
+/* ================================================= */
+
+tabbar tabbox {
+  padding: 0;
+  min-height: 32px;
+  border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
+  background-color: transparent;
+}
+
+tabbar tabbox > tabboxchild {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* ================================================= */
+/* INDIVIDUAL TABS */
+/* ================================================= */
+
+tabbar tabbox > tabboxchild > tab {
+  border-radius: 6px 6px 0 0;
+  background: transparent;
+  transition: var(--terminal-transition-fast);
+  margin: 0 1px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  color: var(--terminal-green-dim);
+  font-family: var(--terminal-font);
+  font-size: 12px;
+  font-weight: 500;
+  text-shadow: 0 0 4px var(--terminal-green-faint);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle scanline effect */
+tabbar tabbox > tabboxchild > tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    var(--terminal-green-ultra) 1px,
+    var(--terminal-green-ultra) 2px
+  );
+  opacity: 0;
+  transition: var(--terminal-transition-fast);
+}
+
+/* Active/Selected tab */
+tabbar tabbox > tabboxchild > tab:selected {
+  background: linear-gradient(180deg,
+    var(--terminal-green-faint) 0%,
+    var(--terminal-green-ultra) 100%);
+  border-color: var(--terminal-green-subtle);
+  color: var(--terminal-green);
+  box-shadow: 
+    inset 0 1px 0 var(--terminal-green-faint),
+    0 0 8px var(--terminal-green-faint),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 6px var(--terminal-green-subtle);
+}
+
+tabbar tabbox > tabboxchild > tab:selected::before {
+  opacity: 0.3;
+}
+
+tabbar tabbox > tabboxchild > tab:selected:hover {
+  background: linear-gradient(180deg,
+    var(--terminal-green-subtle) 0%,
+    var(--terminal-green-faint) 100%);
+  border-color: var(--terminal-green);
+  box-shadow: 
+    inset 0 1px 0 var(--terminal-green-subtle),
+    var(--terminal-glow),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 8px var(--terminal-green);
+}
+
+tabbar tabbox > tabboxchild > tab:selected:active {
+  background: var(--terminal-green-faint);
+  border-color: var(--terminal-green);
+  transform: translateY(1px);
+}
+
+/* Hover states */
+tabbar tabbox > tabboxchild > tab:hover {
+  background: var(--terminal-green-ultra);
+  border-color: var(--terminal-green-faint);
+  color: var(--terminal-green-dim);
+  text-shadow: 0 0 4px var(--terminal-green-faint);
+  box-shadow: 0 0 4px var(--terminal-green-ultra);
+}
+
+tabbar tabbox > tabboxchild > tab:hover::before {
+  opacity: 0.2;
+}
+
+tabbar tabbox > tabboxchild > tab:active {
+  background: var(--terminal-green-faint);
+  border-color: var(--terminal-green-subtle);
+  transform: translateY(1px);
+}
+
+/* ================================================= */
+/* FIRST AND LAST TAB ADJUSTMENTS */
+/* ================================================= */
+
+tabbar tabbox > tabboxchild:first-child > tab {
+  margin-left: 3px;
+  border-radius: 6px 6px 0 0;
+}
+
+tabbar tabbox > tabboxchild:last-child > tab {
+  margin-right: 3px;
+  border-radius: 6px 6px 0 0;
+}
+
+/* ================================================= */
+/* TAB SEPARATORS AND INDICATORS */
+/* ================================================= */
+
+tabbar tabbox > separator {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    var(--terminal-green-faint) 50%,
+    transparent 100%);
+  min-width: 1px;
+  transition: var(--terminal-transition-fast);
+}
+
+tabbar tabbox > separator.hidden {
+  opacity: 0;
+}
+
+tabbar tabbox > revealer > indicator {
+  min-width: 3px;
+  border-radius: 2px 2px 0 0;
+  margin: 2px 6px 0 6px;
+  background: linear-gradient(180deg,
+    var(--terminal-green) 0%,
+    var(--terminal-accent) 100%);
+  box-shadow: var(--terminal-glow);
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; transform: scaleY(1); }
+  100% { opacity: 1; transform: scaleY(1.1); }
+}
+
+/* ================================================= */
+/* SINGLE TAB STYLING */
+/* ================================================= */
+
+tabbar tabbox.single-tab tab,
+tabbar tabbox.single-tab tab:hover,
+tabbar tabbox.single-tab tab:active {
+  background: var(--terminal-green-ultra);
+  border-color: var(--terminal-green-faint);
+  border-radius: 6px 6px 0 0;
+}
+
+/* ================================================= */
+/* ACTION BUTTONS */
+/* ================================================= */
+
+tabbar .start-action,
+tabbar .end-action {
+  padding: 4px 6px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(180deg,
+    var(--terminal-green-ultra) 0%,
+    transparent 100%);
+  border: 1px solid var(--terminal-green-faint);
+  border-bottom: none;
+  color: var(--terminal-green-dim);
+  transition: var(--terminal-transition-fast);
+}
+
+tabbar .start-action:hover,
+tabbar .end-action:hover {
+  background: var(--terminal-green-faint);
+  border-color: var(--terminal-green-subtle);
+  color: var(--terminal-green);
+  box-shadow: 0 0 4px var(--terminal-green-ultra);
+}
+
+tabbar .start-action:dir(ltr),
+tabbar .end-action:dir(rtl) {
+  padding-right: 4px;
+  margin-right: 2px;
+}
+
+tabbar .start-action:dir(rtl),
+tabbar .end-action:dir(ltr) {
+  padding-left: 4px;
+  margin-left: 2px;
+}
+
+/* ================================================= */
+/* CLOSE BUTTON */
+/* ================================================= */
+
+tabbar tab button.close {
+  border-radius: 50%;
+  background: var(--terminal-green-ultra);
+  border: 1px solid var(--terminal-green-faint);
+  color: var(--terminal-green-dim);
+  transition: var(--terminal-transition-fast);
+  min-width: 16px;
+  min-height: 16px;
+  margin-left: 6px;
+  position: relative;
+}
+
+tabbar tab button.close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+  transition: var(--terminal-transition-fast);
+}
+
+tabbar tab button.close:hover {
+  background: var(--terminal-danger);
+  border-color: var(--terminal-danger);
+  color: var(--terminal-white);
+  box-shadow: 0 0 8px rgba(255, 85, 85, 0.4);
+  transform: scale(1.1);
+}
+
+tabbar tab button.close:hover::before {
+  opacity: 0;
+}
+
+tabbar tab button.close:active {
+  transform: scale(0.95);
+}
+
+/* ================================================= */
+/* SCROLLED WINDOW */
+/* ================================================= */
+
+tabbar scrolledwindow {
+  border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
+  background-color: transparent;
+}
+
+/* ================================================= */
+/* ADDITIONAL ENHANCEMENTS */
+/* ================================================= */
+
+/* Enhanced tabbox with subtle glow */
+tabbox {
+  background: linear-gradient(180deg,
+    var(--terminal-green-ultra) 0%,
+    transparent 50%);
+  border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
+  margin: 2px;
+  margin-bottom: 0;
+  box-shadow: inset 0 1px 0 var(--terminal-green-ultra);
+}
+
+/* Text editor integration */
+textview.editor {
+  border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
+  margin-top: 4px;
+  background: var(--terminal-bg-subtle);
+  box-shadow: inset 0 1px 0 var(--terminal-green-ultra);
+}
+
+textview.editor > border.left > gutter,
+textview.editor > border.left,
+revealer.bottom-bar.raised,
+positionlabel.bottom.numeric.right {
+  background-color: transparent;
+}
+
+revealer.bottom-bar.raised,
+revealer.top-bar.raised {
+  border: none;
+  box-shadow: none;
+}
+
+/* Separator styling */
+separator.vertical {
+  opacity: 0;
+}
+
+/* Enhanced list styling */
+list.boxed-list > row.property,
+list.boxed-list > row.activatable.combo,
+list.boxed-list > row.activatable {
+  border-bottom-color: var(--terminal-green-faint);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: var(--terminal-transition-fast);
+}
+
+list.boxed-list > row:hover {
+  background: var(--terminal-green-ultra);
+}
+
+/* Sidebar styling */
+widget.end.sidebar-pane,
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
+}
+
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+
+widget.end.sidebar-pane {
+  margin-top: 4px;
+  margin-left: 4px;
+  background: var(--terminal-bg-subtle);
+  border: 1px solid var(--terminal-green-faint);
+  border-bottom: none;
+}
+
+/* Active tab indicator enhancement */
+tabbar tab:selected::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--terminal-green);
+  box-shadow: 0 0 4px var(--terminal-green);
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --terminal-green: #00ff00;
+    --terminal-green-dim: rgba(0, 255, 0, 0.9);
+    --terminal-green-subtle: rgba(0, 255, 0, 0.6);
+  }
+}
+
+/* ================================================= */
+/* PERFORMANCE OPTIMIZATIONS */
+/* ================================================= */
+
+/* GPU acceleration for smooth animations */
+tabbar tabbox > tabboxchild > tab,
+tabbar tab button.close,
+tabbar .start-action,
+tabbar .end-action {
+  will-change: transform, background-color, border-color, box-shadow;
+  transform: translateZ(0);
+}
+

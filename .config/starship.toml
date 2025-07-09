@@ -107,7 +107,7 @@ style = 'bold green'
 
 [cmd_duration]
 min_time = 1
-format = "[](fg:#252525 bg:none)[$duration]($style)[](fg:#252525 bg:#252525)[](fg:#C397D8 bg:#252525)[󱫑 ](fg:#252525 bg:#C397D8)[](fg:#C397D8 bg:none)"
+format = "[](fg:#252525 bg:none)[$duration]($style)[](fg:#252525 bg:#252525)[](fg:#C397D8 bg:#252525)[󱦟](fg:#252525 bg:#C397D8)[](fg:#C397D8 bg:none)"
 disabled = false
 style = "fg:#E8E3E3 bg:#252525 bold"
 
@@ -115,7 +115,7 @@ style = "fg:#E8E3E3 bg:#252525 bold"
 disabled = false
 time_format = "%R"
 style = "fg:#E8E3E3 bg:#252525 bold"
-format = '([](fg:#252525 bg:none)[$time]($style)[](fg:#252525 bg:#252525)[](fg:#BB8F51 bg:#252525)[󱑂 ](fg:#252525 bg:#BB8F51)[](fg:#BB8F51 bg:none))'
+format = '([](fg:#252525 bg:none)[$time]($style)[](fg:#252525 bg:#252525)[](fg:#BB8F51 bg:#252525)[ ](fg:#252525 bg:#BB8F51)[](fg:#BB8F51 bg:none))'
 
 
 [git_branch]
@@ -124,15 +124,15 @@ style = "fg:#E8E3E3 bg:#252525"
 symbol = " "
 
 [git_status]
-format="[](fg:#252525 bg:none)[$all_status$ahead_behind]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none) "
+format="[](fg:#252525 bg:none)[$all_status$ahead_behind]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none) "
 style = "fg:#E8E3E3 bg:#252525"
 conflicted = "="
 ahead =	"⇡${count}"
 behind = "⇣${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 up_to_date = " 󰄸 "
-untracked = "?${count}"
-stashed = ""
+untracked = "󱓎 ${count}"
+stashed = "󱘤 "
 modified = "!${count}"
 staged = "+${count}"
 renamed = "»${count}"

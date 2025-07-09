@@ -1,0 +1,10 @@
+[Unit]
+Description=GNOME Keyring Daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh
+
+[Install]
+WantedBy=default.target
