@@ -1,0 +1,25 @@
+/*
+ * Matugen Colors Template for Sherlock
+ * This template generates HSL color variables
+ * based on the Matugen palette.
+ */
+:root {
+    /* backgrounds */ 
+    --background: hsl(253, 20%, 8%);
+    --background-soft: hsl(253, 14%, 11%);
+    --border: hsl(255, 8%, 59%);
+    --border-soft: hsl(252, 9%, 30%);
+    --text: hsl(255, 26%, 90%);
+    --text-active: hsl(255, 100%, 29%);
+
+    --tag-background: hsl(251, 100%, 87%);
+
+    /* foreground */
+    --foreground: hsl(254, 64%, 53%);
+    --foreground-soft: hsl(252, 34%, 36%);
+
+    /* accent colors */
+    --error: hsl(6, 99%, 83%);
+    --success: hsl(255, 99%, 83%);
+    --tag-color: hsl(252, 44%, 27%);
+}

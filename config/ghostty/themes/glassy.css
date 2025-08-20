@@ -1,0 +1,426 @@
+/*  Transparent Ghostty Theme - Maximum Transparency */
+/* ========================================================= */
+
+/* ROOT VARIABLES - Extreme transparency */
+:root {
+  /* Nearly invisible backgrounds */
+  --bg-primary: rgba(255, 255, 255, 0.01);
+  --bg-secondary: rgba(255, 255, 255, 0.025);
+  --bg-tertiary: rgba(255, 255, 255, 0.008);
+  --bg-hover: rgba(255, 255, 255, 0.04);
+  --bg-active: rgba(255, 255, 255, 0.06);
+  
+  /* Barely visible borders */
+  --border-subtle: rgba(255, 255, 255, 0.02);
+  --border-light: rgba(255, 255, 255, 0.035);
+  --border-medium: rgba(255, 255, 255, 0.08);
+  
+  /* High contrast text for readability */
+  --text-primary: rgba(255, 255, 255, 1.0);
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-tertiary: rgba(255, 255, 255, 0.7);
+  --text-disabled: rgba(255, 255, 255, 0.45);
+  
+  /* Subtle accent colors */
+  --accent-color: rgba(120, 180, 255, 0.8);
+  --accent-subtle: rgba(120, 180, 255, 0.15);
+  --accent-faint: rgba(120, 180, 255, 0.05);
+  
+  --danger-color: rgba(255, 100, 100, 0.8);
+  --danger-subtle: rgba(255, 100, 100, 0.2);
+  
+  /* Minimal geometry */
+  --radius: 8px;
+  --radius-small: 5px;
+  --radius-tiny: 3px;
+  
+  /* Fast transitions */
+  --transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 100ms ease-out;
+  --transition-micro: all 60ms ease-out;
+  
+  /* Typography */
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  /* Minimal shadows */
+  --shadow-subtle: 0 0.5px 2px rgba(0, 0, 0, 0.02);
+  --shadow-medium: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ========================================================= */
+/* MAIN TABBAR - NEARLY INVISIBLE */
+/* ========================================================= */
+
+tabbar .box {
+  background: transparent;
+  backdrop-filter: blur(8px) saturate(1.05);
+  -webkit-backdrop-filter: blur(8px) saturate(1.05);
+  border-radius: var(--radius) var(--radius) 0 0;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: none;
+  padding: 2px;
+  padding-bottom: 0;
+  position: relative;
+  contain: layout style paint;
+}
+
+/* Even more transparent when not focused */
+tabbar .box:backdrop {
+  background: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-color: rgba(255, 255, 255, 0.01);
+  transition: var(--transition);
+}
+
+tabbar .box:backdrop > * {
+  opacity: 0.5;
+  transition: var(--transition);
+}
+
+/* ========================================================= */
+/* TABBOX - INVISIBLE CONTAINER */
+/* ========================================================= */
+
+tabbar tabbox {
+  padding: 0;
+  min-height: 22px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: transparent;
+  contain: layout;
+}
+
+tabbar tabbox > tabboxchild {
+  border-radius: 0;
+  background: transparent;
+}
+
+/* ========================================================= */
+/* TABS 
+/* ========================================================= */
+
+tabbar tabbox > tabboxchild > tab {
+  border-radius: var(--radius-small);
+  background: transparent;
+  transition: var(--transition-fast);
+  margin: 0 0.5px;
+  padding: 4px 10px;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  position: relative;
+  contain: layout style paint;
+  will-change: background-color, color;
+}
+
+/* Active tab - Barely visible but distinguishable */
+tabbar tabbox > tabboxchild > tab:selected {
+  background: var(--bg-secondary);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--text-primary);
+  box-shadow: none;
+  border: 1px solid var(--border-light);
+}
+
+tabbar tabbox > tabboxchild > tab:selected:hover {
+  background: var(--bg-hover);
+  transform: translateY(-0.5px);
+}
+
+/* Hover - Minimal feedback */
+tabbar tabbox > tabboxchild > tab:hover {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+tabbar tabbox > tabboxchild > tab:active {
+  background: var(--bg-secondary);
+  transform: scale(0.99);
+  transition: var(--transition-micro);
+}
+
+/* ========================================================= */
+/* INVISIBLE SEPARATORS */
+/* ========================================================= */
+
+tabbar tabbox > separator {
+  margin: 8px 0;
+  background: var(--border-subtle);
+  min-width: 1px;
+  opacity: 0.3;
+  transition: var(--transition-fast);
+  border-radius: 0.5px;
+}
+
+tabbar tabbox > separator.hidden {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+/* ========================================================= */
+/* MINIMAL INDICATORS */
+/* ========================================================= */
+
+tabbar tabbox > revealer > indicator {
+  min-width: 1px;
+  border-radius: var(--radius-tiny);
+  margin: 2px 4px;
+  background: var(--accent-color);
+  opacity: 0.6;
+  contain: layout style;
+}
+
+/* ========================================================= */
+/* ACTION BUTTONS */
+/* ========================================================= */
+
+tabbar .start-action,
+tabbar .end-action {
+  padding: 3px 6px;
+  border-radius: var(--radius-small);
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  transition: var(--transition-fast);
+  margin: 1px;
+  contain: layout style paint;
+}
+
+tabbar .start-action:hover,
+tabbar .end-action:hover {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+tabbar .start-action:active,
+tabbar .end-action:active {
+  transform: scale(0.98);
+  transition: var(--transition-micro);
+}
+
+/* ========================================================= */
+/* CLOSE BUTTON */
+/* ========================================================= */
+
+tabbar tab button.close {
+  border-radius: 3px;
+  background-color: transparent;
+  border: none;
+  rgba(255, 255, 255, 0.5);
+  min-width: 16px;
+  min-height: 16px;
+  margin-left: 4px;
+}tabbar tab button.close:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+tabbar tab button.close:active {
+  transform: scale(0.9);
+  transition: var(--transition-micro);
+}
+
+/* ========================================================= */
+/* TRANSPARENT COMPONENTS */
+/* ========================================================= */
+
+/* Scrolled window */
+tabbar scrolledwindow {
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: transparent;
+}
+
+/* Enhanced tabbox */
+tabbox {
+  background: transparent;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin: 0;
+  border: none;
+  contain: layout style;
+}
+
+/* Text editor */
+textview.editor {
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin-top: 1px;
+  background: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  contain: layout style;
+}
+
+/* All editor components transparent */
+textview.editor > border.left > gutter,
+textview.editor > border.left,
+revealer.bottom-bar.raised,
+positionlabel.bottom.numeric.right,
+revealer.top-bar.raised {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Sidebar */
+widget.end.sidebar-pane {
+  margin-top: 1px;
+  margin-left: 1px;
+  background: transparent;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  contain: layout style;
+}
+
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  background: transparent;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin: 0;
+}
+
+/* ========================================================= */
+/* LIGHT THEME - INVERTED TRANSPARENCY */
+/* ========================================================= */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: rgba(0, 0, 0, 0.01);
+    --bg-secondary: rgba(0, 0, 0, 0.025);
+    --bg-tertiary: rgba(0, 0, 0, 0.008);
+    --bg-hover: rgba(0, 0, 0, 0.04);
+    --bg-active: rgba(0, 0, 0, 0.06);
+    
+    --border-subtle: rgba(0, 0, 0, 0.02);
+    --border-light: rgba(0, 0, 0, 0.035);
+    --border-medium: rgba(0, 0, 0, 0.08);
+    
+    --text-primary: rgba(0, 0, 0, 0.95);
+    --text-secondary: rgba(0, 0, 0, 0.85);
+    --text-tertiary: rgba(0, 0, 0, 0.65);
+    --text-disabled: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ========================================================= */
+/* PERFORMANCE OPTIMIZATIONS */
+/* ========================================================= */
+
+/* GPU layers for animations */
+tabbar tabbox > tabboxchild > tab,
+tabbar tab button.close,
+tabbar .start-action,
+tabbar .end-action {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Containment */
+tabbar .box {
+  contain: layout style paint;
+}
+
+tabbar tabbox {
+  contain: layout;
+}
+
+tabbar tabbox > tabboxchild > tab {
+  contain: layout style paint;
+}
+
+/* ========================================================= */
+/* ACCESSIBILITY */
+/* ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --bg-secondary: rgba(255, 255, 255, 0.08);
+    --bg-hover: rgba(255, 255, 255, 0.12);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --text-secondary: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Focus states */
+tabbar tabbox > tabboxchild > tab:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 1px;
+  background: var(--bg-secondary);
+}
+
+tabbar tab button.close:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 1px;
+}
+
+/* ========================================================= */
+/* MINIMAL VISUAL INDICATORS */
+/* ========================================================= */
+
+/* Tiny active indicator */
+tabbar tab:selected::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  opacity: 0.7;
+}
+
+/* Remove all visual noise */
+separator.vertical {
+  display: none;
+}
+
+/* List optimizations */
+list.boxed-list > row.property,
+list.boxed-list > row.activatable.combo,
+list.boxed-list > row.activatable {
+  border-bottom-color: transparent;
+  background: transparent;
+  transition: var(--transition-fast);
+}
+
+list.boxed-list > row:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Hide unnecessary elements */
+.titlebar {
+  background: transparent;
+}
+
+/* Make everything as transparent as possible */
+* {
+  border-color: transparent;
+}
+
+/* Override any remaining backgrounds */
+window,
+.window-frame,
+headerbar,
+.titlebar {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}

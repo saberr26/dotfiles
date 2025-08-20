@@ -1,0 +1,66 @@
+
+#============================ term colors ===========================
+config-file = ~/.config/ghostty/themes/matugen
+#config-file = /usr/share/ghostty/themes/AppleSystemColors
+#====================================================================
+
+#============================ terminal ==============================
+confirm-close-surface = false
+shell-integration-features = cursor,sudo,title
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = false
+window-title-font-family = JetBrainsMono Nerd Font Propo
+window-theme = dark
+window-decoration = client
+background-opacity = 0
+background-blur = 10
+cursor-style = bar
+cursor-style-blink = true
+cursor-opacity = 1
+mouse-hide-while-typing = true
+font-family = Maple Mono NF
+font-style = Bold
+adjust-cell-width = 1
+adjust-font-baseline = 1
+adjust-underline-position = 1
+adjust-underline-thickness = 1
+adjust-strikethrough-position = 1
+adjust-strikethrough-thickness = 1
+adjust-overline-position = 1
+adjust-overline-thickness = 1
+adjust-cursor-thickness = 1
+adjust-box-thickness = 1
+adjust-cursor-height = 1
+#====================================================================
+
+#========================= gtk stuffs ===============================
+gtk-tabs-location = top
+gtk-wide-tabs = true
+#====================================================================
+
+#==================== gtk css themes ================================
+#gtk-custom-css = ~/.config/ghostty/themes/theme.css
+#gtk-custom-css = ~/.config/ghostty/themes/theme-tabs-top.css
+#gtk-custom-css = ~/.config/ghostty/themes/theme-tabs.css
+#gtk-custom-css = ~/.config/ghostty/themes/macos.css
+#gtk-custom-css = ~/.config/ghostty/themes/macos2.css
+#====================================================================
+
+#==================== trash themes ==================================
+#gtk-custom-css = ~/.config/ghostty/themes/gtk-focus.css
+#gtk-custom-css = ~/.config/ghostty/themes/gtk-main.css
+#gtk-custom-css = ~/.config/ghostty/themes/gtk-normal.css
+#gtk-custom-css = ~/.config/ghostty/themes/gtk.css
+#gtk-custom-css = ~/.config/ghostty/themes/tabs.css
+#gtk-custom-css = ~/.config/ghostty/themes/term-e.css
+#gtk-custom-css = ~/.config/ghostty/themes/term.css
+#gtk-custom-css = ~/.config/ghostty/themes/glassy.css
+#gtk-custom-css = ~/.config/ghostty/themes/colors.css
+#====================================================================
+
+#==================== shaders =======================================
+#custom-shader = "/home/vanilla/.config/ghostty/shaders/font.frag"
+custom-shader = "/home/vanilla/.config/ghostty/shaders/crt.glsl"
+#====================================================================
+

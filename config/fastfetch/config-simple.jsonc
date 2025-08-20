@@ -1,0 +1,126 @@
+// Modified from: 24.jsonc
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo":{
+        //"source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | shuf -n 1)",
+        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/icons/\" -name \"*.png\" | shuf -n 1)",
+        //"source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/images/\" -name \"*.icon\" | shuf -n 1)",
+		"height": 15,
+		"padding": {
+		"right": 5,
+		   "top":1
+		   }
+        },
+    "display": {
+      "separator": "",
+      "constants": [
+        // CONSTANT {#92}{$1} - VERTICAL BARS AT START AND 75th CHARACTERS FORWARD AND BACKWARD
+        "                                               │\u001b[47D\u001b[39m",
+                  "───────────────────────",
+        "                                               ┃\u001b[47D\u001b[39m",
+        		  "                  "
+		],
+    },
+    "modules": [
+      {
+        "type": "custom",
+        "key": "{#93}╭────────────",
+        "format": "{#93}─{$2}{$2}╮",
+      },
+      {
+        "type": "custom",
+        "key": "{#93}│",
+        "format": "{#93}{$4}    fastfetch  {$4}{#91} {#92} {#93}  │",
+      },
+      {
+      	"type":"custom",
+      	"key": "{#93}├───────────┬",
+      	"format": "{#93}─{$2}{$2}┤",
+	  },
+      {
+        "type": "title",
+        "key": "{#93}│ {#92} User    {#93}│",
+        "format": "{#93}{$1}{#92} {user-name}  "
+      },
+      {
+        "type": "host",
+        "key": "{#93}│ {#92}󰌢 hname   {#93}│",
+        "format": "{#93}{$1}{#92} {5} chromebook {2} "
+      },
+      {
+        "type": "memory",
+        "key": "{#93}│ {#93} RAM     {#93}│",
+        "format": "{#93}{$1}{#91} {used} / {total} ({percentage}{#91})"
+      },
+      {
+        "type": "DE",
+        "key": "{#93}│ {#93} DE      {#93}│",
+        "format":"{#93}{$1}{#91} {2} {#93}({3})"
+      },
+      {
+        "type": "display",
+        "key": "{#93}│ {#93}󰍹 DISPLAY {#93}│",
+        "format": "{#93}{$1}{#91}󰍹 {scaled-width}x{scaled-height} {refresh-rate}Hz {#93}[{type}]"
+    },
+      {
+        "type": "os",
+        "key": "{#93}│ {#93} OS      {#93}│",
+        "format": "{#93}{$1}{#91} {?pretty-name}{pretty-name}{/pretty-name}{name}{/}{codename} {arch}"
+      },
+      {
+        "type": "kernel",
+        "key": "{#93}│ {#93} Kernel  {#93}│",
+        "format": "{#93}{$1}{#91} {sysname} {#91}{release}"
+      },
+      {
+        "type": "uptime",
+        "key": "{#93}│ {#93} Uptime  {#93}│",
+        "format": "{#93}{$1}{#91} {?days}{days} Days + {?}{hours} hours ,{minutes} mins"
+      },
+      {
+        "type": "gpu",
+        "key": "{#93}│ {#93} GPU     {#93}│",
+        "detectionMethod": "auto",
+        "driverSpecific": true,
+        "format": "{#93}{$1}{#91} {name}"
+      },
+      {
+        "type": "cpu",
+        "key": "{#93}│ {#93} CPU     {#93}│",
+        "showPeCoreCount": true,
+        "temp": true,
+        "format": "{#93}{$1}{#91} {name}"
+      },
+      {
+        "type": "disk",
+        "key": "{#93}│ {#93} Disk    {#93}│",
+        "format": "{#93}{$1}{#91}󰄯 {size-used} / {size-total} ({size-percentage}{#91})"
+      },
+      {
+        "type": "terminal",
+        "key": "{#93}│ {#95} Term    {#93}│",
+        "format": "{#93}{$1}{#92}󰊠 {pretty-name} {#95}v{version}"
+      },
+      {
+        "type": "terminalfont",
+        "key": "{#93}│ {#95} Font    {#93}│",
+        "format": "{#93}{$1}{#92} {name} {#95}{size}"
+      },
+      {
+        "type": "shell",
+        "key": "{#93}│ {#95} Shell   {#93}│",
+        "format": "{#93}{$1}{#92} {pretty-name}{#95} v{version}"
+      },
+      {
+        "type": "battery",
+        "key": "{#93}│ {#95} battery {#93}│",
+        "format": "{#93}{$1}{#95} {capacity}{#95} {#95}{time-hours} hours,{time-minutes} mins "
+      },
+      // CUSTOM - Button UI bar
+      {
+        "type": "custom",
+        "key": "{#93}╰───────────┴",
+        "format": "{#93}─{$2}{$2}╯",
+      }
+    ]
+  }

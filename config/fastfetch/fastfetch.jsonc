@@ -1,0 +1,92 @@
+// Inspired by Catnap
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small"
+    },
+    "display": {
+          "separator": "",
+          "key": {
+              "width": 15
+          },
+          "constants": [
+            // CONSTANT {#92}{$1} - VERTICAL BARS AT START AND 75th CHARACTERS FORWARD AND BACKWARD
+            "                                        │\u001b[41D\u001b[39m",
+                      "────────────────────",
+            		  "                    ",
+            "        │\u001b[35D\u001b[39m"
+    		],
+        },
+    "modules": [
+		{
+		    "key": "┌───────────╮",
+		    "format": "{#93}┌{$2}─{$2}╮",
+		    "type": "custom"
+		},
+        {
+            // draw borders first to make colors of left and right border consistant
+            "key": "│ {#31}● user    {#keys}│",
+            "type": "title",
+        	"format": "│ {$1}{#31} {user-name}  "
+        },
+        {
+            "key": "│ {##D7B54F}● hname   {#keys}│",
+            "type": "host",
+            "format": "│ {$1}{##D7B54F} {5} chromebook {2}"
+
+        },
+        {
+            "key": "│ {#33}● uptime  {#keys}│",
+            "type": "uptime",
+            "format": "│ {$1}{#33} {days}d {hours}h {minutes}min {seconds}s   "
+        },
+        {
+            "key": "│ {#34}● distro  {#keys}│",
+            "type": "os",
+			"format": "│ {$1}{#34} {?pretty-name}{pretty-name}{/pretty-name}{name}{/}{codename} {arch}"
+        },
+        {
+            "key": "│ {#35}● kernel  {#keys}│",
+            "type": "kernel",
+            "format": "│ {$1}{#35} {sysname} {release}"
+        },
+        {
+            "key": "│ {#36}● desktop {#keys}│",
+            "type": "de",
+            "format":"│ {$1}{#36} {2} ({3})"
+        },
+        {
+            "key": "│ {#31}● term    {#keys}│",
+            "type": "terminal",
+            "format": "│ {$1}{#31}󰊠 {pretty-name}"
+        },
+        {
+            "key": "│ {#32}● shell   {#keys}│",
+            "type": "shell",
+			"format": "│ {$1}{#32} {pretty-name}"
+        },
+        {
+            "key": "│ {#33}● cpu     {#keys}│",
+            "type": "cpu",
+            "showPeCoreCount": true,
+            "temp": true,
+            "format": "│ {$1}{#33} {name} @{freq-max}"
+        },
+        {
+            "key": "│ {#34}● disk    {#keys}│",
+            "type": "disk",
+            "format": "│ {$1}{#34} {size-used} / {#34}{size-total} [{size-percentage}{#34}]",
+            "folders": "/"
+        },
+        {
+            "key": "│ {#35}● memory  {#keys}│",
+            "type": "memory",
+            "format": "│ {$1}{#35} {used} / {total} {#31}({percentage}{#31})"
+        },
+        {
+            "key": "└───────────╯",
+            "format": "{#93}└{$2}─{$2}╯",
+            "type": "custom"
+        }
+    ]
+}

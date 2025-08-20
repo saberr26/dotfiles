@@ -1,0 +1,25 @@
+/*
+ * Matugen Colors Template for Sherlock
+ * This template generates HSL color variables
+ * based on the Matugen palette.
+ */
+:root {
+    /* backgrounds */ 
+    --background: {{ colors.surface_dim.default.hsl }};
+    --background-soft: {{ colors.surface_container_low.default.hsl }};
+    --border: {{ colors.outline.default.hsl }};
+    --border-soft: {{ colors.outline_variant.default.hsl }};
+    --text: {{ colors.on_surface.default.hsl }};
+    --text-active: {{ colors.on_primary.default.hsl }};
+
+    --tag-background: {{ colors.secondary.default.hsl }};
+
+    /* foreground */
+    --foreground: {{ colors.primary_container.default.hsl }};
+    --foreground-soft: {{ colors.secondary_container.default.hsl }};
+
+    /* accent colors */
+    --error: {{ colors.error.default.hsl }};
+    --success: {{ colors.tertiary.default.hsl }};
+    --tag-color: {{ colors.on_secondary.default.hsl }};
+}

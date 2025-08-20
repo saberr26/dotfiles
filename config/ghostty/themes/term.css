@@ -1,0 +1,380 @@
+/* Minimal terminal tab bar for Ghostty - rounded top, flat bottom */
+tabbar .box {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 8px 8px 0 0;
+  box-shadow: none;
+  padding: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+tabbar .box:backdrop {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 0 0;
+}
+
+tabbar .box:backdrop > scrolledwindow,
+tabbar .box:backdrop > .start-action,
+tabbar .box:backdrop > .end-action {
+  filter: opacity(0.6);
+}
+
+tabbar tabbox {
+  padding: 0;
+  min-height: 32px;
+  border-radius: 8px 8px 0 0;
+  background-color: transparent;
+}
+
+tabbar tabbox > tabboxchild {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+tabbar tabbox > tabboxchild > tab {
+  border-radius: 6px 6px 0 0;
+  background-color: transparent;
+  transition: background-color 100ms ease;
+  margin: 0 1px;
+  padding: 6px 10px;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+tabbar tabbox > tabboxchild > tab:selected {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+tabbar tabbox > tabboxchild > tab:selected:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+tabbar tabbox > tabboxchild > tab:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+tabbar tabbox > tabboxchild:first-child > tab {
+  margin-left: 3px;
+}
+
+tabbar tabbox > tabboxchild:last-child > tab {
+  margin-right: 3px;
+}
+
+tabbar tabbox > separator {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  min-width: 1px;
+}
+
+tabbar tabbox > separator.hidden {
+  opacity: 0;
+}
+
+tabbar tabbox > revealer > indicator {
+  min-width: 2px;
+  border-radius: 1px;
+  margin: 3px 6px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+tabbar tabbox.single-tab tab,
+tabbar tabbox.single-tab tab:hover {
+  background: none;
+}
+
+tabbar .start-action,
+tabbar .end-action {
+  padding: 6px 5px;
+  border-radius: 6px 6px 0 0;
+}
+
+tabbar .start-action:dir(ltr),
+tabbar .end-action:dir(rtl) {
+  padding-right: 0;
+}
+
+tabbar .start-action:dir(rtl),
+tabbar .end-action:dir(ltr) {
+  padding-left: 0;
+}
+
+/* Close button */
+tabbar tab button.close {
+  border-radius: 3px;
+  background-color: transparent;
+  border: none;
+  rgba(255, 255, 255, 0.5);
+  min-width: 16px;
+  min-height: 16px;
+  margin-left: 4px;
+}
+
+tabbar tab button.close:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Scrolled window */
+tabbar scrolledwindow {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Additional tabbox styling */
+tabbox {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px 8px 0 0;
+  margin: 2px 2px 0 2px;
+  box-shadow: none;
+}
+
+/* Text editor styling */
+textview.editor {
+  border-radius: 8px 8px 0 0;
+  margin-top: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+}
+
+textview.editor > border.left > gutter,
+textview.editor > border.left,
+revealer.bottom-bar.raised,
+positionlabel.bottom.numeric.right {
+  background-color: transparent;
+}
+
+revealer.bottom-bar.raised,
+revealer.top-bar.raised {
+  border: none;
+  box-shadow: none;
+}
+
+/* Separators */
+separator.vertical {
+  opacity: 0;
+}
+
+/* List styling */
+list.boxed-list > row.property,
+list.boxed-list > row.activatable.combo,
+list.boxed-list > row.activatable {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Sidebar styling */
+widget.end.sidebar-pane,
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  border-radius: 8px 8px 0 0;
+}
+
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+
+widget.end.sidebar-pane {
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+
+/*some other styling */
+
+/* Terminal-style tab bar with rounded top, flat bottom */
+tabbar .box {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 0 0 !important;
+  box-shadow: inset 0 1px 0 rgba(0, 255, 0, 0.1);
+  padding: 1px;
+  padding-top: 2px;
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+tabbar .box:backdrop {
+  background-color: rgba(0, 0, 0, 0.15);
+  transition: background-color 200ms ease-out;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+tabbar .box:backdrop > scrolledwindow,
+tabbar .box:backdrop > .start-action,
+tabbar .box:backdrop > .end-action {
+  filter: opacity(0.4);
+  transition: filter 200ms ease-out;
+}
+
+tabbar tabbox {
+  padding: 0;
+  min-height: 28px;
+  border-radius: 8px 8px 0 0 !important;
+  background-color: transparent;
+}
+
+tabbar tabbox > tabboxchild {
+  border-radius: 0 !important;
+  background-color: transparent;
+}
+
+tabbar tabbox > tabboxchild > tab {
+  border-radius: 6px 6px 0 0 !important;
+  background-color: transparent;
+  transition: all 150ms ease-in-out;
+  margin: 0 1px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  color: rgba(0, 255, 0, 0.8);
+  font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-shadow: 0 0 2px rgba(0, 255, 0, 0.3);
+}
+
+tabbar tabbox > tabboxchild > tab:selected {
+  background-color: rgba(0, 255, 0, 0.08);
+  border-color: rgba(0, 255, 0, 0.3);
+  color: rgba(0, 255, 0, 1);
+  box-shadow: inset 0 1px 0 rgba(0, 255, 0, 0.2), 0 0 8px rgba(0, 255, 0, 0.1);
+  text-shadow: 0 0 4px rgba(0, 255, 0, 0.5);
+}
+
+tabbar tabbox > tabboxchild > tab:selected:hover {
+  background-color: rgba(0, 255, 0, 0.12);
+  border-color: rgba(0, 255, 0, 0.4);
+  box-shadow: inset 0 1px 0 rgba(0, 255, 0, 0.3), 0 0 12px rgba(0, 255, 0, 0.15);
+}
+
+tabbar tabbox > tabboxchild > tab:selected:active {
+  background-color: rgba(0, 255, 0, 0.15);
+  border-color: rgba(0, 255, 0, 0.5);
+}
+
+tabbar tabbox > tabboxchild > tab:hover {
+  background-color: rgba(0, 255, 0, 0.04);
+  border-color: rgba(0, 255, 0, 0.2);
+  color: rgba(0, 255, 0, 0.9);
+  text-shadow: 0 0 3px rgba(0, 255, 0, 0.4);
+}
+
+tabbar tabbox > tabboxchild > tab:active {
+  background-color: rgba(0, 255, 0, 0.08);
+  border-color: rgba(0, 255, 0, 0.3);
+}
+
+/* First and last tab special styling */
+tabbar tabbox > tabboxchild:first-child > tab {
+  margin-left: 2px;
+  border-radius: 6px 6px 0 0 !important;
+}
+
+tabbar tabbox > tabboxchild:last-child > tab {
+  margin-right: 2px;
+  border-radius: 6px 6px 0 0 !important;
+}
+
+tabbar tabbox > separator {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  transition: opacity 150ms ease-in-out;
+  background-color: rgba(0, 255, 0, 0.2);
+  min-width: 1px;
+}
+
+tabbar tabbox > separator.hidden {
+  opacity: 0;
+}
+
+tabbar tabbox > revealer > indicator {
+  min-width: 2px;
+  border-radius: 1px 1px 0 0;
+  margin: 1px 6px 0 6px;
+  background: #00ff00;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.8), inset 0 0 2px rgba(0, 255, 0, 0.9);
+}
+
+/* Single tab styling */
+tabbar tabbox.single-tab tab, 
+tabbar tabbox.single-tab tab:hover, 
+tabbar tabbox.single-tab tab:active {
+  background: rgba(0, 255, 0, 0.03);
+  border-color: rgba(0, 255, 0, 0.15);
+  border-radius: 6px 6px 0 0 !important;
+}
+
+/* Action buttons */
+tabbar .start-action,
+tabbar .end-action {
+  padding: 2px 4px;
+  border-radius: 6px 6px 0 0 !important;
+  background-color: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-bottom: none;
+  color: rgba(0, 255, 0, 0.7);
+}
+
+tabbar .start-action:dir(ltr),
+tabbar .end-action:dir(rtl) {
+  padding-right: 2px;
+  margin-right: 1px;
+}
+
+tabbar .start-action:dir(rtl),
+tabbar .end-action:dir(ltr) {
+  padding-left: 2px;
+  margin-left: 1px;
+}
+
+
+/* Close button styling */
+tabbar tab button.close {
+  border-radius: 50% !important;
+  background-color: rgba(0, 255, 0, 0.1);
+  border: none;
+  color: rgba(0, 255, 0, 0.6);
+  transition: all 150ms ease-in-out;
+  min-width: 14px;
+  min-height: 14px;
+  margin-left: 4px;
+}
+
+tabbar tab button.close:hover {
+  background-color: rgba(255, 50, 50, 0.8);
+  color: white;
+  box-shadow: 0 0 4px rgba(255, 50, 50, 0.5);
+}
+
+/* Scrolled window styling */
+tabbar scrolledwindow {
+  border-radius: 8px 8px 0 0 !important;
+  background-color: transparent;
+}
+
+/* Force all rounded corners to be consistent */
+tabbar * {
+  border-radius: inherit;
+}
+
+
+tabbar tab:selected::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 2px;
+  background: rgba(0, 255, 0, 0.8);
+}
+
+
+
+

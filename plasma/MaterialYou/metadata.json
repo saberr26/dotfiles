@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "salahhachmi06@gmail.com",
+                "Name": "saber"
+            }
+        ],
+        "Category": "",
+        "Dependencies": [
+        ],
+        "Description": "KDE theme forked from breeze",
+        "EnabledByDefault": true,
+        "Id": "Layan",
+        "License": "GPL 3.0",
+        "Name": "MaterialYou",
+        "Version": "0.1"
+    }
+}

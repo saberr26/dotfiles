@@ -1,0 +1,125 @@
+[config]
+reload_apps = true
+
+[config.reload_apps_list]
+kitty = true
+gtk_theme = true
+
+[config.wallpaper]
+command = "swww"
+arguments = [ "img", "-t", "fade", "--transition-duration", "0.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
+set = true
+
+[templates.m3colors] # quickshell end4
+input_path = '~/.config/matugen/templates/colors.json'
+output_path = '~/.local/state/quickshell/user/generated/colors.json'
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/rofi-colors.rasi"
+
+[templates.flamshot]
+input_path = "~/.config/matugen/templates/flamshot.ini"
+output_path = "~/.config/flameshot/flameshot.ini"
+
+[templates.AppFlowy]
+input_path = "~/.config/matugen/templates/appflowy.json"
+output_path = "~/.cache/matugen/Matugen.flowy_plugin/Matugen.dark.json"
+
+[templates.AppFlowy_light]
+input_path = "~/.config/matugen/templates/appflowy.json"
+output_path = "~/.cache/matugen/Matugen.flowy_plugin/Matugen.light.json"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/colors.conf"
+post_hook = "killall -SIGUSR1 kitty && kitty @ set-colors -a -c ~/.config/kitty/colors.conf"
+
+[templates.ghostty]
+input_path = "~/.config/matugen/templates/ghostty"
+output_path = "~/.config/ghostty/themes/matugen"
+post_hook = "ydotool key 29:1 42:1 51:1 51:0 42:0 29:0"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk3-colors.css"
+output_path = "~/.config/gtk-3.0/colors.css"
+post_hook = "gsettings set org.gnome.desktop.interface gtk-theme \"adw-gtk3-dark\"; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/colors.css"
+
+[templates.ghostty-gtk4-1]
+input_path = "~/.config/matugen/templates/ghostty-macos.css"
+output_path = "~/.config/ghostty/themes/macos.css"
+
+[templates.ghostty-gtk4-2]
+input_path = "~/.config/matugen/templates/ghostty-macos2.css"
+output_path = "~/.config/ghostty/themes/macos2.css"
+
+[templates.ghostty-gtk4-3]
+input_path = "~/.config/matugen/templates/gtk4-colors-tabs.css"
+output_path = "~/.config/ghostty/themes/theme-tabs.css"
+
+[templates.ghostty-gtk4-4]
+input_path = "~/.config/matugen/templates/gtk4-colors-tabs-top.css"
+output_path = "~/.config/ghostty/themes/theme-tabs-top.css"
+
+[templates.ghostty-gtk4-5]
+input_path = "~/.config/matugen/templates/gtk4-colors.css"
+output_path = "~/.config/ghostty/themes/theme.css"
+
+[templates.ags]
+input_path = "~/.config/matugen/templates/ags.scss"
+output_path = "~/.config/ags/style/colors.scss"
+
+[templates.hyprland]
+input_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.sherlock]
+input_path = "~/.config/matugen/templates/sherlock.css"
+output_path = "~/.config/sherlock/colors.css"
+
+#[templates.ax-shell]
+#input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
+#output_path = "~/.config/Ax-Shell/styles/colors.css"
+#post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
+
+[templates.wallpaper]
+input_path = '~/.config/matugen/templates/wallpaper.txt'
+output_path = '~/.cache/wallpaper.txt'
+
+[templates.chrome_theme]
+input_path = "~/.config/matugen/templates/chrome-theme.json"
+output_path = "~/.config/matugen/templates/chrome/Matugen-Chrome/manifest.json"
+post_hook = "~/.config/matugen/templates/chrome/chrome_matugen.sh ~/.config/matugen/templates/chrome/Matugen-Chrome"
+
+[config.custom_colors.red]
+color = "#FF0000"
+blend = true
+
+[config.custom_colors.green]
+color = "#00FF00"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
+[config.custom_colors.blue]
+color = "#0000FF"
+blend = true
+
+[config.custom_colors.magenta]
+color = "#FF00FF"
+blend = true
+
+[config.custom_colors.cyan]
+color = "#00FFFF"
+blend = true
+
+[config.custom_colors.white]
+color = "#FFFFFF"
+blend = true

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring/
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=GNOME Keyring Daemon

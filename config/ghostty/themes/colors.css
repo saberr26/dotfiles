@@ -1,0 +1,48 @@
+/*
+ * GTK4 Colors
+ * Generated with Matugen - GTK4 Compatible
+ */
+
+/* Accent colors */
+--accent-color: #a1d399;
+--accent-fg-color: #002203;
+--accent-bg-color: #a1d399;
+
+/* Window colors */
+--window-bg-color: #10140f;
+--window-fg-color: #e0e4db;
+
+/* Headerbar colors */
+--headerbar-bg-color: #10140f;
+--headerbar-fg-color: #e0e4db;
+--headerbar-border-color: #424940;
+--headerbar-backdrop-color: #10140f;
+--headerbar-shade-color: rgba(0, 0, 0, 0.07);
+
+/* Dialog and popover colors */
+--dialog-bg-color: #10140f;
+--dialog-fg-color: #e0e4db;
+--popover-bg-color: #1d211b;
+--popover-fg-color: #e0e4db;
+
+/* View colors */
+--view-bg-color: #10140f;
+--view-fg-color: #e0e4db;
+
+/* Card colors */
+--card-bg-color: #191d17;
+--card-fg-color: #e0e4db;
+--card-shade-color: rgba(0, 0, 0, 0.07);
+
+/* Sidebar colors */
+--sidebar-bg-color: var(--window-bg-color);
+--sidebar-fg-color: var(--window-fg-color);
+--sidebar-border-color: #424940;
+--sidebar-backdrop-color: var(--window-bg-color);
+--sidebar-shade-color: rgba(0, 0, 0, 0.07);
+
+/* Additional GTK4 colors */
+--thumbnail-bg-color: #1d211b;
+--thumbnail-fg-color: #c2c8bd;
+--shade-color: rgba(0, 0, 0, 0.07);
+--scrollbar-outline-color: rgba(0, 0, 0, 0.5);
