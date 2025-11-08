@@ -1,0 +1,3 @@
+{{ colors.primary.default.rgb | lighten: 10.0 | replace: "rgb(", "" | replace: ")", "" | replace: " ", "" }}
+{{ colors.primary.default.rgb | replace: "rgb(", "" | replace: ")", "" | replace: " ", "" }}
+{{ colors.primary.default.rgb | lighten: -10.0 | replace: "rgb(", "" | replace: ")", "" | replace: " ", "" }}

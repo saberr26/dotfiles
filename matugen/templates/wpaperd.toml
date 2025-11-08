@@ -1,0 +1,7 @@
+[default]
+path = "{{image}}"
+
+[default.transition.bounce]
+shadow-colour = [0.0, 0.0, 0.0, 0.6]
+shadow-height = 0.075
+bounces = 3.0

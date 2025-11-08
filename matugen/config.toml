@@ -1,0 +1,118 @@
+[config]
+reload_apps = true
+
+version_check = true
+
+[config.reload_apps_list]
+kitty = true
+gtk_theme = true
+
+[config.wallpaper]
+command = "swww"
+arguments = [ "img", "-t", "fade", "--transition-duration", "0.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
+set = false
+
+#[templates.zed]
+#input_path = '~/.config/matugen/templates/zed-matugen-modern.json'
+#output_path = '~/.local/share/zed/extensions/installed/vscode-dark-modern/themes/vscode-matugen-modern.json'
+# 
+# [templates.wpaperd]
+# input_path = '~/.config/matugen/templates/wpaperd.toml'
+# output_path = '/home/vanilla/.config/wpaperd/config.toml'
+# post_hook = 'wpaperctl reload'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/matugen.conf'
+post_hook = 'kill -SIGUSR1 $KITTY_PID'
+
+[templates.rgb]
+input_path = '~/.config/matugen/templates/cavasik.rgb'
+output_path = '~/.cache/matugen/colors.rgb'
+
+[templates.dgop]
+input_path = '~/.config/matugen/templates/dgop.json'
+output_path = '~/.config/dgop/colors.json'
+
+[templates.vicinae]
+input_path = '~/.config/matugen/templates/vicinae_material_hard_dark.json'
+output_path = '/usr/share/vicinae/themes/MaterialYou/material_dark.json'
+post_hool = 'systemctl restart --now --user vicinae.service '
+
+#[templates.ignis] #ignis Exo
+#input_path = './templates/colors.scss'
+#output_path = '~/.config/ignis/colors.scss'
+
+[templates.m3colors] # quickshell end4
+input_path = '~/.config/matugen/templates/colors.json'
+output_path = '~/.local/state/quickshell/user/generated/colors.json'
+
+#[templates.kcolorscheme]
+#input_path = '~/.config/matugen/templates/matugen-kcolorscheme.colors'
+#output_path = '~/.local/share/color-schemes/DankMatugen.colors'
+
+[templates.flamshot]
+input_path = "~/.config/matugen/templates/flamshot.ini"
+output_path = "~/.config/flameshot/flameshot.ini"
+
+[templates.ghostty]
+input_path = "~/.config/matugen/templates/ghostty"
+output_path = "~/.config/ghostty/themes/matugen"
+post_hook = "ydotool key 29:1 42:1 51:1 51:0 42:0 29:0"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk3-colors.css"
+output_path = "~/.config/gtk-3.0/colors.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/colors.css"
+
+[templates.ags]
+input_path = "~/.config/matugen/templates/ags.scss"
+output_path = "~/.config/ags/style/colors.scss"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.hyprlock]
+input_path = "~/.config/matugen/templates/hyprland/hyprlock-colors.conf"
+output_path = "~/.config/hypr/hyprlock/colors.conf"
+
+[templates.sherlock]
+input_path = "~/.config/matugen/templates/sherlock.css"
+output_path = "~/.config/sherlock/colors.css"
+
+[templates.wallpaper]
+input_path = '~/.config/matugen/templates/wallpaper.txt'
+output_path = '~/.cache/wallpaper.txt'
+
+# [config.custom_colors.red]
+# color = "#FF0000"
+# blend = true
+# 
+# [config.custom_colors.green]
+# color = "#00FF00"
+# blend = true
+# 
+# [config.custom_colors.yellow]
+# color = "#FFFF00"
+# blend = true
+# 
+# [config.custom_colors.blue]
+# color = "#0000FF"
+# blend = true
+# 
+# [config.custom_colors.magenta]
+# color = "#FF00FF"
+# blend = true
+# 
+# [config.custom_colors.cyan]
+# color = "#00FFFF"
+# blend = true
+# 
+# [config.custom_colors.white]
+# color = "#FFFFFF"
+# blend = true

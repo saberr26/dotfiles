@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "appearance": "dark",
+  "icon": "./icon.png",
+  "name": "Material You Dark",
+  "description": "Material You compliant theme with dynamic colors",
+  "palette": {
+    "background": "{{colors.background.default.hex | auto_lightness: 3.0}}",
+    "foreground": "{{colors.primary.default.hex }}",
+    "blue": "{{colors.primary.default.hex}}",
+    "green": "{{colors.secondary.default.hex}}",
+    "magenta": "{{colors.tertiary.default.hex}}",
+    "orange": "{{colors.error.default.hex}}",
+    "purple": "{{colors.primary_container.default.hex}}",
+    "red": "{{colors.error.default.hex}}",
+    "yellow": "{{colors.secondary_container.default.hex}}",
+    "cyan": "{{colors.tertiary_container.default.hex}}"
+  }
+}
